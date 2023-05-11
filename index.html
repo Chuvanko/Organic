@@ -44,6 +44,190 @@
             <div id="rightblock" class="img"><img class="main_ph" src="images/main_ph.png"></div>
         </div>
     </section>
+    <section class="choose">
+        <div class="container">
+            <h2>Why Choose US?</h2>
+            <p>Organic food is grown without the use of synthetic chemicals</p>
+            <article class="icon_img">
+                <div>
+                    <img src="images/Icon_1.png">
+                    <h3>Easy to order</h3>
+                    <p>Foods include fresh produce, meats as well as processed</p>
+                </div>
+                <div class="icon_2">
+                    <img src="images/Icon_2.png">
+                    <h3>Live Order</h3>
+                    <p>Place your online Order easily and get the food instantly</p>
+                </div>
+                <div>
+                    <img src="images/Icon_3.png">
+                    <h3>100% Organic</h3>
+                    <p>Organic food is grown without the use of synthetic chemicals</p>
+                </div>
+            </article>
+            <article  class="statistics">
+                <div>
+                    <h3>40+</h3>
+                    <p>Food Partners</p>
+                </div>
+                <div class="trusted_clients">
+                    <h3>459+</h3>
+                    <p>Trusted Clients</p>
+                </div>
+                <div>
+                    <h3>12k+</h3>
+                    <p>Order Online</p>
+                </div>
+            </article>
+        </div>
+    </section>
+    <section class="about_us">
+        <div class="container">
+            <article>
+                <h2>About US</h2>
+                <p>Organic food is grown without the use of synthetic chemicals, such as human-made pesticides and
+                    fertilizers, and does not contain genetically modified organisms (GMOs). Organic foods include fresh
+                    produce, meats, and dairy products as well as processed foods such as crackers, drinks, and frozen meals.</p>
+                <a href="about.html" class="order_main">Learn More</a>
+            </article>
+            <div class="img_about"><img src="images/about_us.png"></div>
+        </div>
+    </section>
+    <section class="special_dishes">
+        <div class="container">
+            <h2>Special Dishes for you</h2>
+            <p>Made with premium & 100% Organic ingredients</p>
+            <article class="type_of_salad">
+                <div class="salad">
+                    <img class="green_salad" src="images/green_salad.png">
+                    <h3>Green Salad</h3>
+                    <p>A salad combined witha delicious cut of bacon and mixed with tasty and fresh sesome oil.</p>
+                </div>
+                <div class="salad">
+                    <img class="green_salad" src="images/beef_salad.png">
+                    <h3>Beef Salad</h3>
+                    <p>A salad combined witha delicious cut of bacon and mixed with tasty and fresh sesome oil.</p>
+                </div>
+                <div class="salad">
+                    <img class="green_salad" src="images/nut_salad.png">
+                    <h3>Nut Salad</h3>
+                    <p>A salad combined witha delicious cut of bacon and mixed with tasty and fresh sesome oil.</p>
+                </div>
+            </article>
+            <a href="#" class="view_all">View All</a>
+        </div>
+    </section>
+    <script type="text/javascript" language="JavaScript">// <![CDATA[
+    var res="21212";
+    function check_me()
+    {
+        var count=0;
+        with(document.test) {
+            if (!Q1[0].checked&&!Q1[1].checked)
+            {count+=1};
+            if (!Q2[0].checked&&!Q2[1].checked)
+            {count+=1};
+            if (!Q3[0].checked&&!Q3[1].checked)
+            {count+=1};
+            if (!Q4[0].checked&&!Q4[1].checked)
+            {count+=1};
+            if (!Q5[0].checked&&!Q5[1].checked)
+            {count+=1};
+            if (count>0) alert("Ви виконали не всі завдання. Перевірте себе!")
+            else answer();
+        }
+    }
+
+    function control(k, f1,f2,f3,f4,f5) {
+        if (k==1&&f1.checked) return true;
+        if (k==2&&f2.checked) return true;
+        if (k==3&&f3.checked) return true;
+        if (k==4&&f4.checked) return true;
+        if (k==5&&f5.checked) return true;
+        return false;
+    }
+
+    function answer() {
+        answ="";
+        with(document)    {
+            answ+=control(res.charAt(0) ,test.Q1[0],test.Q1[1])?"1":"0";
+            answ+=control(res.charAt(1) ,test.Q2[0],test.Q2[1])?"1":"0";
+            answ+=control(res.charAt(2) ,test.Q3[0],test.Q3[1])?"1":"0";
+            answ+=control(res.charAt(3) ,test.Q4[0],test.Q4[1])?"1":"0";
+            answ+=control(res.charAt(4) ,test.Q5[0],test.Q5[1])?"1":"0";
+
+            showResult();
+        }
+    }
+
+    function showResult()   {
+        var nok=0;
+        var i,s;
+
+        for (i=0; i<answ.length;i++) {nok+=answ.charAt(i)=="1"?1:0;}
+        if(nok==5) s="ВІДМІННО";
+        if(nok<5) s="ДОБРЕ";
+        if(nok<3.75) s="ЗАДОВІЛЬНО";
+        if (nok<2.5) s="НЕЗАДОВІЛЬНО";
+        document.test.s1.
+            value="Кількіть правильних відповідей "+nok+". Ваша оцінка "+s+". Подивіться на вікно поруч із номером питання. Якщо відповідь правильна, там (+). Якщо відповідь помилкова, там (-).";
+
+        with(document.test)
+        {
+            if (answ.charAt(0)=="1") {T1.value=" + "} else {T1.value=" - "};
+            if (answ.charAt(1)=="1") {T2.value=" + "} else {T2.value=" - "};
+            if (answ.charAt(2)=="1") {T3.value=" + "} else {T3.value=" - "};
+            if (answ.charAt(3)=="1") {T4.value=" + "} else {T4.value=" - "};
+            if (answ.charAt(4)=="1") {T5.value=" + "} else {T5.value=" - "};
+        }
+    }
+    function showhide(obj){
+        if(obj == 'none') return 'inline';
+        else return 'none';
+    }
+    // ]]>
+    </script>
+    <center><b>Правильний вибір продуктів</b></center><br/><br/>
+    &nbsp;&nbsp;&nbsp;<span style="color:#006699;text-decoration:underline;cursor:pointer;" onclick="document.getElementById('instruction').style.display = showhide(document.getElementById('instruction').style.display)">
+Інструкція</span>
+    <br/>
+    <div id="instruction" style="display: none; width: 100%;">
+        <ul>
+            <li>Виберіть один із варіантів у кожному з 5 питань;</li>
+            <li>Натисніть кнопку "Показати результат";</li>
+            <li>Скрипт не покаже результат, доки Ви не відповісте на всі запитання;</li>
+            <li>Завітайте у вікно поруч із номером завдання. Якщо відповідь правильна, то там (+). Якщо ви помилилися, там (-).</li>
+            <li>За кожну правильну відповідь нараховується 1 бал;</li>
+            <li>Оцінки: менше 2.5 балів - НЕЗАДОВОЛЬНО, від 2.5 та менше 3.75 - ЗАДОВОЛЬНО, 3.75 і менше 5 - ДОБРЕ, 5 - ВІДМІННО;</li>
+            <li>Щоб скинути результат тестування, натиснути кнопку "Скинути відповіді";</li>
+        </ul>
+    </div>
+    <div class="container">
+        <form name="test"><ol>
+            <li><INPUT type="text" size="1" value="" name="T1"/><b> Краще обрати сир у складі якого є</b><br/>
+                <input type="radio" value="0" name="Q1"/> відновлене молоко<br />
+                <input type="radio" value="1" name="Q1"/> нормалізоване молоко<br />
+                <br/></li><li><INPUT type="text" size="1" value="" name="T2"/><b> Якими мають бути хороші сухофрукти?</b><br/>
+            <input type="radio" value="0" name="Q2"/> матові<br />
+            <input type="radio" value="1" name="Q2"/> блискучі<br />
+            <br/></li><li><INPUT type="text" size="1" value="" name="T3"/><b> Колір м'яса світліший, ніж зазвичай. Про що це каже?</b><br/>
+            <input type="radio" value="0" name="Q3"/> М'ясо почало псуватися<br />
+            <input type="radio" value="1" name="Q3"/> М'ясо було переморожене<br />
+            <br/></li><li><INPUT type="text" size="1" value="" name="T4"/><b> Чи можна купувати плямисті помідори?</b><br/>
+            <input type="radio" value="0" name="Q4"/> Не варто, їх «перегодували» хімією<br />
+            <input type="radio" value="1" name="Q4"/> Можна, це абсолютно нормально<br />
+            <br/></li><li><INPUT type="text" size="1" value="" name="T5"/><b> Як визначити, що у сирі є крохмаль?</b><br/>
+            <input type="radio" value="0" name="Q5"/> Крапнути оцтом на продукт<br />
+            <input type="radio" value="1" name="Q5"/> Капнути йодом на продукт<br />
+            <br/></li></ol>
+            <CENTER>
+                <P><TEXTAREA name="s1" rows="4" cols="70" readonly> </TEXTAREA> </P>
+                <INPUT onclick="check_me()" type="button" value="Показати результат"/>&nbsp;&nbsp;&nbsp;&nbsp;
+                <INPUT type="reset" value="Очистити відповіді"/>
+            </CENTER>
+        </form>
+        <!-- Test created by service http://test.fromgomel.com -->
+    </div>
 </main>
 <footer>
     <div class="container">
